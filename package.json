@@ -1,0 +1,40 @@
+{
+    "name": "vscode-dnh",
+    "displayName": "Touhou Danmakufu ph3 Support",
+    "version": "0.0.1",
+    "description": "Snippets, Intellisense, and Colouring for Touhou Danmakufu language",
+    "author": {
+        "name": "Jerdan1980"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/Jerdan1980/vscode-dnh"
+    },
+    "categories": [
+        "Programming Languages",
+        "Snippets"
+    ],
+
+    "contributes": {
+        "languages": [
+            {
+                "id": "danmakufu",
+                "configuration": "./language-configuration.json",
+                "extensions": [ ".dnh" ]
+            }
+        ],
+        "grammars": [
+            {
+                "language": "id",
+                "scopeName": "source.id",
+                "path": "./syntaxes/id.tmLanguage."
+            }
+        ],
+        "snippets": [
+            {
+                "language": "id",
+                "path": "./snippets/id.json"
+            }
+        ]
+    }
+}

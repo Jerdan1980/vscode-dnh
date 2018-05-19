@@ -1,0 +1,188 @@
+{
+	// Place your snippets for danmakufu here. Each snippet is defined under a snippet name and has a prefix, body and 
+	// description. The prefix is what is used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. Placeholders with the 
+	// same ids are connected.
+	// Example:
+	// "Print to console": {
+	// 	"prefix": "log",
+	// 	"body": [
+	// 		"console.log('$1');",
+	// 		"$2"
+	// 	],
+	// 	"description": "Log output to console"
+	// }
+
+	//https://code.visualstudio.com/docs/editor/userdefinedsnippets
+	//currently unit 1 leson 6 part 4
+	
+	//stuff at the beginning
+	"script requirements": {
+		"prefix": "#TouhouDanmakufu",
+		"description": "Required at the beginning of every script",
+		"body": [
+			"#TouhouDanmakufu[${1|Single,Plural,Stage,Package|}]",
+			"#ScriptVersion[3]",
+			"#Title[\"${2:Insert title here}\"]",
+			"#Text[\"${3:Insert description here}\"]"
+		]
+	},
+	"include": {
+		"prefix": "#include",
+		"body": "#include \"${0:Insert filepath here}\""
+	},
+	"@Event": {
+		"prefix": "@Event",
+		"body": [
+			"@Event {",
+			"  //insert code here",
+			"  $1",
+			"}"
+		]
+	},
+	"@Initialize": {
+		"prefix": "@Initialize",
+		"body": [
+			"@Initialize {",
+			"  //insert code here",
+			"  $1",
+			"}"
+		]
+	},
+	"@MainLoop": {
+		"prefix": "@MainLoop",
+		"body": [
+			"@MainLoop {",
+			"  //insert code here",
+			"  $1",
+			"}"
+		]
+	},
+
+	//one line operations and constatns
+	"yield": {
+		"prefix": "yield",
+		"description": "Waits one frame",
+		"body": "yield;"
+	},
+	"script directory": {
+		"prefix": "GetCurrentScriptDirectory",
+		"body": "GetCurrentScriptDirectory()"
+	},
+
+
+	//these have to do with boss events
+	"Boss HP": {
+		"prefix": "EV_REQUEST_LIFE",
+		"description": "Event asks for the health of the boss",
+		"body": "EV_REQUEST_LIFE"
+	},
+	"Bonus timer": {
+		"prefix": "EV_REQUEST_TIMER",
+		"description": "Event asks for the timer for how long the attack will last for",
+		"body": "EV_REQUEST_TIMER"
+	},
+	"Spellcard bonus": {
+		"prefix": "EV_REQUEST_SPELL_SCORE",
+		"description": "Event asks for the starting Spellcard bonus",
+		"body": "EV_REQUEST_SPELL_SCORE"
+	},
+
+	//Enemy Handling
+	"Create Enemy": {
+		"prefix": "ObjEnemy_Create",
+		"description": "Creates an enemy",
+		"body": "ObjEnemy_Create($1)$2"
+	},
+	"Register Enemy": {
+		"prefix": "ObjEnemy_Regist",
+		"description": "Registers enemy so it can be used",
+		"body": "ObjEnemy_Regist($1);"
+	},
+	"Boss Enemy Type": {
+		"prefix": "OBJ_ENEMY_BOSS",
+		"body": "OBJ_ENEMY_BOSS"
+	},
+
+	//basic operations
+	"local method": {
+		"prefix": "local",
+		"body": [
+			"local{",
+			"  //insert code here",
+			"  $1",
+			"}"
+		]
+	},
+	"if statement": {
+		"prefix": "if",
+		"body": [
+			"if(${1:bool_condition}) {",
+			"  //insert code here",
+			"  $2",
+			"}",
+		]
+	},
+	"else statement": {
+		"prefix": "else",
+		"body": [
+			"else {",
+			"  //insert code here",
+			"  $1",
+			"}",
+		]
+	},
+	"alternative-case statement": {
+		"prefix": "alternative",
+		"body": [
+			"alternative(${1;x})",
+			"case(${2:i}) {",
+			"  //Do stuff",
+			"  $3",
+			"}case(${4:j}) {",
+			"  //Do other stuff",
+			"  $5", 
+			"others{",
+			"  //Default",
+			"  $6",
+			"}"
+		]
+	},
+	"for loop": {
+		"prefix": "for",
+		"body": [
+			"for(${1:x}) {",
+			"  //insert code here",
+			"  $2",
+			"}",
+		]
+	},
+	"while loop": {
+		"prefix": "while",
+		"body": [
+			"while(${1:bool_condition}) {",
+			"  //insert code here",
+			"  $2",
+			"}"
+		]
+	},
+	"ascent loop": {
+		"prefix": "ascent",
+		"body": [
+			"ascent(${1:i} in ${2:0}..${3:j}) {",
+			"  //insert code here",
+			"  $4",
+			"}"
+		]
+	},
+	"function": {
+		"prefix": "function",
+		"body": [
+			"function ${1:func_name}(${2:var}) {",
+			"  //insert code here",
+			"  $3",
+			"  return var;",
+			"}"
+		]
+	}
+}
