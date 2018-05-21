@@ -20,7 +20,8 @@
             {
                 "id": "danmakufu",
                 "configuration": "./language-configuration.json",
-                "extensions": [ ".dnh" ]
+                "extensions": [ ".dnh" ],
+                "aliases": [ "Danmakufu" ]
             }
         ],
         "grammars": [
